@@ -1,0 +1,18 @@
+table.bundled_products .bundled_product_summary .bundled_product_images {
+	float: none;
+	margin-left: 0;
+	min-width: 80px;
+}
+
+table.bundled_products .bundled_product_summary .bundled_product_images a {
+	margin-right: 0;
+}
+
+table.bundled_products .bundled_product_summary {
+	padding-left: 0;
+	padding-bottom: 0;
+}
+
+table.bundled_products td p:last-child {
+	margin-bottom: 1em;
+}
