@@ -48,8 +48,8 @@ class WC_PB_Tabular_Layout {
 		// Add tabular styles
 		add_action( 'wp_enqueue_scripts', __CLASS__ . '::styles' );
 
-		// Do the work
-		add_action( 'woocommerce_before_add_to_cart_form', __CLASS__ . '::init_tabular' );
+		// Insertion point
+		add_action( 'woocommerce_bundle_add_to_cart', __CLASS__ . '::init_tabular' );
 		add_action( 'woocommerce_composite_show_composited_product_bundle', __CLASS__ . '::init_tabular' );
 	}
 
