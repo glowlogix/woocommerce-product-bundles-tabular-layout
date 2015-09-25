@@ -23,10 +23,6 @@ table.bundled_products td.bundled_item_col {
 	padding: 1em;
 }
 
-table.bundled_products td.bundled_item_images_col {
-	padding-left: 0;
-}
-
 table.bundled_products th.bundled_item_col {
 	border: 0;
 }
