@@ -13,6 +13,24 @@ table.bundled_products .bundled_product_summary {
 	padding-bottom: 0;
 }
 
-table.bundled_products td p:last-child {
+table.bundled_products td.bundled_item_col p:last-child {
 	margin-bottom: 1em;
+}
+
+table.bundled_products td.bundled_item_col {
+	vertical-align: top;
+	border: 0;
+	padding: 1em;
+}
+
+table.bundled_products td.bundled_item_images_col {
+	padding-left: 0;
+}
+
+table.bundled_products th.bundled_item_col {
+	border: 0;
+}
+
+table.bundled_products {
+	border-width: 0 0 1px;
 }

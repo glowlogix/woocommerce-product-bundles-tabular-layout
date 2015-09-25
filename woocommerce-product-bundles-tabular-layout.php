@@ -157,9 +157,9 @@ class WC_PB_Tabular_Layout {
 	public static function bundled_items_table_start() {
 		?><table cellspacing="0" class="bundled_products">
 			<thead>
-				<th class="bundled_item_images_head"></th>
-				<th class="bundled_item_details_head">Product</th>
-				<th class="bundled_item_qty_head">Qty</th>
+				<th class="bundled_item_col bundled_item_images_head"></th>
+				<th class="bundled_item_col bundled_item_details_head">Product</th>
+				<th class="bundled_item_col bundled_item_qty_head">Qty</th>
 			</thead>
 			<tbody><?php
 	}
@@ -169,7 +169,7 @@ class WC_PB_Tabular_Layout {
 	}
 
 	public static function before_bundled_item_thumbnail( $bundled_item, $bundle ) {
-		echo '<td class="bundled_item_images_col">';
+		echo '<td class="bundled_item_col bundled_item_images_col">';
 	}
 
 	public static function after_bundled_item_thumbnail( $bundled_item, $bundle ) {
@@ -177,7 +177,7 @@ class WC_PB_Tabular_Layout {
 	}
 
 	public static function before_bundled_item_details( $bundled_item, $bundle ) {
-		echo '<td class="bundled_item_details_col">';
+		echo '<td class="bundled_item_col bundled_item_details_col">';
 	}
 
 	public static function after_bundled_item_details( $bundled_item, $bundle ) {
@@ -186,7 +186,7 @@ class WC_PB_Tabular_Layout {
 
 	public static function load_qty_template( $bundled_item, $bundle ) {
 
-		echo '<td class="bundled_item_qty_col">';
+		echo '<td class="bundled_item_col bundled_item_qty_col">';
 
 		wc_get_template( 'bundled-item-quantity.php', array(
 				'bundled_item'         => $bundled_item,
