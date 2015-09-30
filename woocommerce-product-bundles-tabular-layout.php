@@ -27,7 +27,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class WC_PB_Tabular_Layout {
 
-	public static $version = '1.0.0';
+	public static $version        = '1.0.0';
+	public static $req_pb_version = '4.11.5';
 
 	public static function plugin_url() {
 		return plugins_url( basename( plugin_dir_path(__FILE__) ), basename( __FILE__ ) );
@@ -38,6 +39,23 @@ class WC_PB_Tabular_Layout {
 	}
 
 	public static function init() {
+
+		// Lights on
+		add_action( 'plugins_loaded', __CLASS__ . '::load_plugin' );
+	}
+
+	/**
+	 * Lights on.
+	 */
+
+	public static function load_plugin() {
+
+		global $woocommerce_bundles;
+
+		if ( ! empty( $woocommerce_bundles ) && version_compare( $woocommerce_bundles->version, self::$req_pb_version ) < 0 ) {
+			add_action( 'admin_notices', __CLASS__ . '::pb_admin_notice' );
+			return false;
+		}
 
 		// Display layout option in "Bundled Products" tab
 		add_action( 'woocommerce_bundled_products_admin_config', __CLASS__ . '::tabular_admin_option' );
@@ -53,6 +71,13 @@ class WC_PB_Tabular_Layout {
 		add_action( 'woocommerce_composite_show_composited_product_bundle', __CLASS__ . '::init_tabular' );
 	}
 
+	/**
+	 * PB version check notice.
+	 */
+
+	public static function pb_admin_notice() {
+	    echo '<div class="error"><p>' . sprintf( __( '&quot;WooCommerce Product Bundles &ndash; Tabular Layout&quot; requires at least Product Bundles version %s in order to function. Please upgrade WooCommerce Product Bundles.', 'woocommerce-product-bundles' ), self::$req_pb_version ) . '</p></div>';
+	}
 
 	/**
 	 * Admin tabular setting display / save.
