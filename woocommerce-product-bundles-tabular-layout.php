@@ -3,7 +3,7 @@
 * Plugin Name: WooCommerce Product Bundles - Tabular Layout
 * Plugin URI: http://www.woothemes.com/products/composite-products/
 * Description: Adds a "Layout" option to your Product Bundles, which can be used to activate a table-based layout, similar to the one found in Grouped Products.
-* Version: 1.0.0
+* Version: 1.0.1
 * Author: SomewhereWarm
 * Author URI: http://somewherewarm.net/
 * Developer: Manos Psychogyiopoulos
@@ -27,8 +27,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class WC_PB_Tabular_Layout {
 
-	public static $version        = '1.0.0';
-	public static $req_pb_version = '4.11.5';
+	public static $version        = '1.0.1';
+	public static $req_pb_version = '4.12.2';
 
 	public static function plugin_url() {
 		return plugins_url( basename( plugin_dir_path(__FILE__) ), basename( __FILE__ ) );

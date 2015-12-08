@@ -2,7 +2,7 @@
 /**
  * Bundled Product Quantity Template.
  *
- * @version 1.0.0
+ * @version 1.0.1
  */
 
 // Exit if accessed directly
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $quantity_min = $bundled_item->get_quantity();
-$quantity_max = $bundled_item->get_quantity( 'max' );
+$quantity_max = $bundled_item->get_quantity( 'max', true );
 
 $input_name   = $bundle_fields_prefix . 'bundle_quantity_' . $bundled_item->item_id;
 
